@@ -3,7 +3,7 @@ package week1.classWork;
 /**
  * Created by Игорь on 22.01.2017.
  */
-public class Run {
+public class RunUniversity {
     public static void main(String[] args) {
         Student student1 = new Student("Mark", "Bobrov", 23);
         Student student2 = new Student("Vova", "Kotov", 22);
@@ -21,7 +21,15 @@ public class Run {
 
         university.showGroups();
         university.showStudents();
-        group1.addStudent("Kolya", "Popov", 24);
+        group1.setStudents(group1.addStudent("Kolya", "Popov", 24));
+        Group.sortByName(group1.getStudents());
         university.showStudents();
+        System.out.println();
+        group1.findStudentByName("Vova");
+        group2.setStudents(group2.removeStudentByName("Max"));
+        group2.showStudents();
     }
+
+    //добавить/удалить группу - аналогично. Если успею до конца недели - доделаю, а заодно
+    //и проверки в методах добавить/удалить на правильность ввода и имени
 }

@@ -11,6 +11,14 @@ public class Group {
         this.students = students;
     }
 
+    public Student[] getStudents() {
+        return students;
+    }
+
+    public void setStudents(Student[] students) {
+        this.students = students;
+    }
+
     public void showStudents(){
         System.out.println(name);
         System.out.println();
@@ -23,7 +31,7 @@ public class Group {
         return "Name - " + name /*+ "  Students - " + students.toString()*/;
     }
 
-    public String asStingAll(Student[] students){
+    public String asStingAll(){
         String str = "Name - " + name + "\n";
         for (int i = 0; i < students.length; i++) {
             str += students[i].asString() + ";\n";
@@ -39,6 +47,46 @@ public class Group {
         }
         newArrStudent[newArrStudent.length - 1] = new Student(name, surname, age);
         return newArrStudent;
+    }
+
+    public static Student[] sortByName(Student[] arr) {
+
+
+        for (int j = 0; j < arr.length; j++) {
+
+            for (int i = j + 1; i < arr.length; i++) {
+
+                if (arr[i].getName().compareTo(arr[j].getName()) < 0) {
+                    Student temp = arr[j];
+                    arr[j] = arr[i];
+                    arr[i] = temp;
+                }
+            }
+
+
+        }
+        return arr;
+    }
+
+    public Student[] removeStudentByName(String name){
+        Student[] newArr = new Student[students.length - 1];
+        int pos = findStudentByName(name);
+        System.arraycopy(students,0, newArr, 0, pos);
+        System.arraycopy(students, pos + 1, newArr, pos, students.length - pos - 1);
+
+        return newArr;
+    }
+
+    public int findStudentByName(String name){
+        int pos = -1;
+        for (int i = 0; i < students.length; i++) {
+            if (name.equals(students[i].getName())){
+                System.out.println(students[i].asString());
+                pos = i;
+                break;
+            }
+        }
+        return pos;
     }
 
 }

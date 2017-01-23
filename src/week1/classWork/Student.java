@@ -17,6 +17,10 @@ public class Student {
         this.age = age;
     }
 
+    public String getName() {
+        return name;
+    }
+
     public String asString(){
         return "Name is - " + name + "  Surname - " + surname + "  age - " + age;
     }

@@ -29,7 +29,7 @@ public class University {
         System.out.println();
         for (int i = 0; i < groups.length; i++) {
 
-            System.out.println(groups[i].asStingAll(groups));
+            System.out.println(groups[i].asStingAll());
         }
     }
 }
