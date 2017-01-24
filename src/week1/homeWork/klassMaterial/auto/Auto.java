@@ -1,4 +1,4 @@
-package week1.homeWork.klassMaterial;
+package week1.homeWork.klassMaterial.auto;
 
 /**
  * Created by Игорь on 23.01.2017.

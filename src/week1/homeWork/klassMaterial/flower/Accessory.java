@@ -1,4 +1,4 @@
-package week1.homeWork.klassMaterial;
+package week1.homeWork.klassMaterial.flower;
 
 /**
  * Created by Игорь on 24.01.2017.
