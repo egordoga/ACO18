@@ -8,7 +8,7 @@ public class Student {
     private String name;
     private String surname;
     private int age;
-    double averageMark;
+
 
 
     public Student(String name, String surname, int age) {
@@ -21,7 +21,22 @@ public class Student {
         return name;
     }
 
+    public String getSurname() {
+        return surname;
+    }
+
     public String asString(){
         return "Name is - " + name + "  Surname - " + surname + "  age - " + age;
+    }
+
+    @Override
+    public boolean equals(Object obj){
+        if (obj == this) return true;
+        if (obj == null || obj.getClass() != this.getClass()) return false;
+
+        Student other = (Student) obj;
+        return age == other.age &&
+                (surname ==other.surname || (surname != null && surname.equals(other.getSurname()))) &&
+                        (name == other.name || (name != null && name.equals(other.getName())));
     }
 }

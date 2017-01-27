@@ -41,11 +41,21 @@ public class Group {
 
     public Student[] addStudent(String name, String surname, int age){
         Student[] newArrStudent = new Student[students.length + 1];
+        Student student = new Student(name, surname, age);
+
+        for (int i = 0; i < students.length; i++) {
+
+            if (students[i].equals(student)) {
+                System.out.println("Такой студент уже имеется");
+                return students;
+            }
+        }
 
         for (int i = 0; i < students.length; i++) {
             newArrStudent[i] = students[i];
         }
-        newArrStudent[newArrStudent.length - 1] = new Student(name, surname, age);
+
+        newArrStudent[newArrStudent.length - 1] = student;
         return newArrStudent;
     }
 
