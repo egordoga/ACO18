@@ -19,7 +19,7 @@ public class RunUniversity {
 
         University university = new University("KPI", new Group[]{group1, group2});
 
-        university.showGroups();
+        /*university.showGroups();
         university.showStudents();
         group1.setStudents(group1.addStudent("Kolya", "Popov", 24));
         Group.sortByName(group1.getStudents());
@@ -27,7 +27,10 @@ public class RunUniversity {
         System.out.println();
         group1.findStudentByName("Vova");
         group2.setStudents(group2.removeStudentByName("Max"));
-        group2.showStudents();
+        group2.showStudents();*/
+
+        group1.sort(new AgeComparator());
+        group1.showStudents();
     }
 
     //добавить/удалить группу - аналогично. Если успею до конца недели - доделаю, а заодно

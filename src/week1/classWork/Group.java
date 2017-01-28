@@ -1,5 +1,7 @@
 package week1.classWork;
 
+import java.util.Comparator;
+
 public class Group {
 
     private String name;
@@ -97,6 +99,25 @@ public class Group {
             }
         }
         return pos;
+    }
+
+    public  void sort(Comparator comparator) {
+
+
+        for (int j = 0; j < students.length; j++) {
+
+            for (int i = j + 1; i < students.length; i++) {
+
+                if (comparator.compare(students[i], students[j]) < 0) {
+                    Student temp = students[j];
+                    students[j] = students[i];
+                    students[i] = temp;
+                }
+            }
+
+
+        }
+
     }
 
 }

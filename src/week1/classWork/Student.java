@@ -25,6 +25,10 @@ public class Student {
         return surname;
     }
 
+    public int getAge() {
+        return age;
+    }
+
     public String asString(){
         return "Name is - " + name + "  Surname - " + surname + "  age - " + age;
     }
@@ -38,5 +42,9 @@ public class Student {
         return age == other.age &&
                 (surname ==other.surname || (surname != null && surname.equals(other.getSurname()))) &&
                         (name == other.name || (name != null && name.equals(other.getName())));
+    }
+
+    public int compareTo() {
+        return 0;
     }
 }
