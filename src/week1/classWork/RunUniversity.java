@@ -29,8 +29,15 @@ public class RunUniversity {
         group2.setStudents(group2.removeStudentByName("Max"));
         group2.showStudents();*/
 
-        group1.sort(new AgeComparator());
+        /*group1.sort(new AgeComparator());
         group1.showStudents();
+        group1.sort(new SurnameComparator());
+        group1.showStudents();*/
+
+        Group.sortByName(group1.getStudents());
+        group1.showStudents();
+        System.out.println(group1.searchBinaryByName("Mark"));
+
     }
 
     //добавить/удалить группу - аналогично. Если успею до конца недели - доделаю, а заодно

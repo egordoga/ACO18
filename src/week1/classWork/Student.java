@@ -3,7 +3,7 @@ package week1.classWork;
 /**
  * Created by Игорь on 22.01.2017.
  */
-public class Student {
+public class Student implements Comparable{
 
     private String name;
     private String surname;
@@ -44,7 +44,12 @@ public class Student {
                         (name == other.name || (name != null && name.equals(other.getName())));
     }
 
-    public int compareTo() {
-        return 0;
+
+
+    @Override
+    public int compareTo(Object o) {
+        Student student = (Student) o;
+
+        return surname.compareTo(student.surname);
     }
 }

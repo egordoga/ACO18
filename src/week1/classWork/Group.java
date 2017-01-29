@@ -120,5 +120,25 @@ public class Group {
 
     }
 
+    public int searchBinaryByName(String str){
+        sortByName(students);
+        if(students[0].equals(str))return 0;
+        int i = 1;
+        int start = 0;
+        int end = students.length - 1;
+        while (i != 0){
+            if(students[i].getName().equals(str)) return i;
+            i = (end - start) / 2;
+            if (students[i].getName().compareTo(str) > 0){
+                start = start / 2 + 1;
+            } else end /= 2;
+            System.out.println(i);
+        }
+        return  -1;
+    }
+    private int isCoincidence(String str, Student[] arr){
+        return arr[arr.length/2].getName().compareTo(str);
+    }
+
 }
 
